@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private CoordinatorLayout coordinatorLayout;
-    private Button btnSimpleSnackbar, btnActionCallback, btnCustomView, customViewButton;
+    private Button btnSimpleSnackbar, btnActionCallback, btnCustomView, customViewButton, recyclerViewButton;
     private FloatingActionButton fab;
 
     @Override
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnActionCallback = (Button) findViewById(R.id.btnActionCallback);
         btnCustomView = (Button) findViewById(R.id.btnCustomSnackbar);
         customViewButton = (Button) findViewById(R.id.btnCustomView);
+        recyclerViewButton = (Button) findViewById(R.id.btnRecyclerView);
 
         btnSimpleSnackbar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CustomView.class);
+                startActivity(intent);
+            }
+        });
+
+        recyclerViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intent);
             }
         });
